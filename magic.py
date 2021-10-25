@@ -90,10 +90,12 @@ for filename in os.listdir('csv'):
                 #change macaddress
                 row2[14] = "00:00:00:00:00:00"
                 row2[15] = "RESERVED"
+                
 
             else:
                 #change macaddress
                 row2[14] = row[0]
+                row2[15] = "MAC_ADDRESS"
 
             #change name
             row1[1] = row[1]
@@ -103,13 +105,15 @@ for filename in os.listdir('csv'):
             row2[1] = ip
             #change name
             row2[3] = row[1]
+            #add mac address
+            
 
             newLine1 = ";".join(row1)
             newLine2 = ";".join(row2)
             newline1 = newLine1.encode("utf8")
             newline2 = newLine2.encode("utf8")
-            r.write(newLine1 + "\n")
-            dataq = dataq + newLine2 + "\n"
+            r.write(newLine2 + "\n")
+            dataq = dataq + newLine1 + "\n"
         
         r.write(dataq)
 
