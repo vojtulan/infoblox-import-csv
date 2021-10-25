@@ -26,12 +26,14 @@ for filename in os.listdir('csv'):
 r = open("infobloxImport.csv", "w",encoding='utf8')
 f = open("corrected.csv", "w",encoding='utf8')
 
+
 print("Formatting ...")
 with open("template.csv") as infoblox_Template:
     reader = csv.reader(infoblox_Template, delimiter=';')
     row = ""
     row1 = ""
     row2 = ""
+    dataq = ""
     array = []
     for row in reader:
         array.append(row)
@@ -107,6 +109,10 @@ for filename in os.listdir('csv'):
             newline1 = newLine1.encode("utf8")
             newline2 = newLine2.encode("utf8")
             r.write(newLine1 + "\n")
-            r.write(newLine2 + "\n")
+            dataq = dataq + newLine2 + "\n"
+        
+        r.write(dataq)
+
+
 
 print("Script has ended, check the newly created 'infobloxImport.csv' ")
