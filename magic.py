@@ -97,14 +97,16 @@ for filename in os.listdir('csv'):
                 row2[14] = row[0]
                 row2[15] = "MAC_ADDRESS"
 
+            #print(row1[1].replace(" ",""))
+            row1[1] = row[1].replace(" ","") 
             #change name
-            row1[1] = row[1]
+            #row1[1] = row[1]
             #change IP
             row1[3] = ip
             #change IP
             row2[1] = ip
             #change name
-            row2[3] = row[1]
+            row2[3] = row[1].replace(" ","")
             #add mac address
             
 
