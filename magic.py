@@ -114,8 +114,8 @@ for filename in os.listdir('csv'):
             newLine2 = ";".join(row2)
             newline1 = newLine1.encode("utf8")
             newline2 = newLine2.encode("utf8")
-            r.write(newLine2 + "\n")
-            dataq = dataq + newLine1 + "\n"
+            dataq = dataq + newLine2 + "\n"
+            r.write(newLine1 + "\n")
         
         r.write(dataq)
 
