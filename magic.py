@@ -86,8 +86,10 @@ for filename in os.listdir('csv'):
             row1 = array[2]
             row2 = array[3]
 
-            if row[0] == "":
+            print(row[0])
+            if not row[0]:
                 #change macaddress
+                print("jsme v podmince")
                 row2[14] = "00:00:00:00:00:00"
                 row2[15] = "RESERVED"
                 row2[7] = "FALSE"
@@ -97,6 +99,7 @@ for filename in os.listdir('csv'):
                 #change macaddress
                 row2[14] = row[0]
                 row2[15] = "MAC_ADDRESS"
+                row2[7] = "TRUE"
 
             #print(row1[1].replace(" ",""))
             row1[1] = row[1].replace(" ","") 
