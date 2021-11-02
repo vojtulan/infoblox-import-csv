@@ -40,8 +40,8 @@ with open("template.csv") as infoblox_Template:
     firstLine = array[0]
     r.write(";".join(array[0]) + "\n")
     r.write(";".join(array[1]) + "\n")
-    print(array[0])
-    print(array[1])
+    #print(array[0])
+    #print(array[1])
 
 
 for filename in os.listdir('csv'):
@@ -51,33 +51,33 @@ for filename in os.listdir('csv'):
         for row in reader:
             #print(row[0])
             parts = row[2].split(".")
-            print(parts)
+            #print(parts)
             ip = ""
 
             for piece in parts:
-                print(piece)
+                #print(piece)
                 if piece == "000":
                     piece = "0"
                     ip = ip + piece + "."
-                    print("IP:", ip)
+                    #print("IP:", ip)
                     continue
 
                 elif piece.startswith('00'):
                     piece = piece[2:]
                     ip = ip + piece + "."
-                    print("IP:", ip)
+                    #print("IP:", ip)
                     continue
 
                 elif piece.startswith('0'):
                     piece = piece[1:]
                     ip = ip + piece + "."
-                    print("IP:", ip)
+                    #print("IP:", ip)
                     continue
 
                 else:
                     ip = ip + piece + "."
 
-            print("IPFULL:", ip)
+            #print("IPFULL:", ip)
             ip = ip[:-1]
             #print(ip)
             correctedRow = row[0] + ";" + row[1] + ";" + ip + "\n"
@@ -90,7 +90,7 @@ for filename in os.listdir('csv'):
                 #change macaddress
                 row2[14] = "00:00:00:00:00:00"
                 row2[15] = "RESERVED"
-                row1[7] = "FALSE"
+                row2[7] = "FALSE"
                 
 
             else:
