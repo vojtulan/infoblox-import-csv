@@ -90,6 +90,7 @@ for filename in os.listdir('csv'):
                 #change macaddress
                 row2[14] = "00:00:00:00:00:00"
                 row2[15] = "RESERVED"
+                row1[7] = "FALSE"
                 
 
             else:
