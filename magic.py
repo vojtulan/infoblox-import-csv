@@ -5,6 +5,7 @@ import re
 print("Script has started ...")
 print("Validating and repairing csv files ...")
 regex = "([0-9a-fA-F]:?){12}"
+
 headerHostAddress = "header-hostaddress;address*;_new_address;parent*;boot_file;boot_server;broadcast_address;configure_for_dhcp;configure_for_dns;deny_bootp;domain_name;domain_name_servers;ignore_dhcp_param_request_list;lease_time;mac_address;match_option;network_view;next_server;option_logic_filters;pxe_lease_time;pxe_lease_time_enabled;routers;use_for_ea_inheritance;view"
 headerHostRecord = "header-hostrecord;fqdn*;_new_fqdn;addresses;aliases;cli_credentials;comment;configure_for_dns;_new_configure_for_dns;created_timestamp;creator_member;ddns_protected;disabled;enable_discovery;enable_immediate_discovery;ipv6_addresses;network_view;override_cli_credentials;override_credential;snmpv1v2_credential;snmpv3_credential;ttl;use_snmpv3_credential;view"
 templateHostRecord = "hostrecord;P20325;;10.32.22.2;;;;FALSE;;;;FALSE;FALSE;TRUE;FALSE;;Default;;FALSE;;;;FALSE;"
@@ -86,7 +87,7 @@ for filename in os.listdir('csv'):
             
             if not row[0]:
                 #change macaddress
-                print("jsme v podmince")
+                #print("jsme v podmince")
                 hostAddress[14] = "00:00:00:00:00:00"
                 hostAddress[15] = "RESERVED"
                 hostAddress[7] = "FALSE"
