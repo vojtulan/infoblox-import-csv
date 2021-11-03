@@ -49,7 +49,7 @@ for filename in os.listdir('csv'):
         hostRecordArray = []
         hostAddressArray = []
         for row in reader:
-            print(row)
+            #print(row)
             parts = row[2].split(".")
             
             ip = ""
